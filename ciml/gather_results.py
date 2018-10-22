@@ -636,6 +636,8 @@ def plot_experiment_data(dataset_experiment_label,
         exp_data = load_data_json(d_e_l[0], 'eval_' + d_e_l[0],
                                   sub_folder=d_e_l[1],
                                   data_path=data_path, s3=s3)
+        if exp_data is None:
+            continue
         labels.append(d_e_l[2])
         if dataset_experiment_comp:
             d2, e2 = dataset_experiment_comp[count]
